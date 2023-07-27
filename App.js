@@ -1,8 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image,Button,Alert } from 'react-native';
+import React, {useState} from 'react';
+import { StyleSheet, Text, View, Image,Button,Alert, Switch} from 'react-native';
 
 export default function App() {
- 
+  const [isEnabled, setIsEnabled] = useState(false);
+  const toggleSwitch = () => setIsEnabled(previousState => !previousState);
   return (
     <View style={styles.container}>
       <Image style={styles.image} 
@@ -17,6 +19,13 @@ export default function App() {
         title="Continue"
         onPress={() => Alert.alert('Simple Button pressed')}
        />
+       <Switch
+        trackColor={{false: '#767577', true: '#81b0ff'}}
+        thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
+        ios_backgroundColor="#3e3e3e"
+        onValueChange={toggleSwitch}
+        value={isEnabled}
+      />
       <StatusBar style="auto" />
       
     </View>
