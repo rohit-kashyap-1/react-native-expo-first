@@ -46,6 +46,7 @@ export default function App() {
         title="Login"
         onPress={() => Alert.alert('You have successfully login')}
        />
+       <Text style={{marginTop:10,fontSize:22}}>Building an app is amazing</Text>
       <StatusBar style="auto" />
       
     </View>
