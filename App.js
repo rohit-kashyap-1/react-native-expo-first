@@ -1,8 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
-import { StyleSheet, Text, View, Image,Button,Alert, Switch} from 'react-native';
+import { StyleSheet, Text, View, Image,Button,Alert, Switch,SafeAreaView, TextInput} from 'react-native';
 
 export default function App() {
+  const [text, onChangeText] = React.useState('Useless Text');
+  const [number, onChangeNumber] = React.useState('');
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
   return (
@@ -26,6 +28,20 @@ export default function App() {
         onValueChange={toggleSwitch}
         value={isEnabled}
       />
+      <SafeAreaView>
+      <TextInput
+        style={styles.input}
+        onChangeText={onChangeText}
+        value={text}
+      />
+      <TextInput
+        style={styles.input}
+        onChangeText={onChangeNumber}
+        value={number}
+        placeholder="useless placeholder"
+        keyboardType="numeric"
+      />
+    </SafeAreaView>
       <StatusBar style="auto" />
       
     </View>
@@ -45,6 +61,14 @@ const styles = StyleSheet.create({
   image:{
     width:400,
     height:400
+  },
+  input: {
+    width:380,
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
   }
 });
+
 
