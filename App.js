@@ -46,7 +46,7 @@ export default function App() {
         title="Login"
         onPress={() => Alert.alert('You have successfully login')}
        />
-       <Text style={{marginTop:10,fontSize:22,paddingLeft:20,paddingRight:20}}>Building an app is amazing, the only thing you should remember is you always need an idea before proceeding.</Text>
+       <Text style={{marginTop:10,fontSize:22,paddingLeft:20,paddingRight:20,color:'skyblue'}}>Building an app is amazing, the only thing you should remember is you always need an idea before proceeding.</Text>
       <StatusBar style="auto" />
       
     </View>
