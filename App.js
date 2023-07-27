@@ -42,6 +42,10 @@ export default function App() {
         keyboardType="numeric"
       />
     </SafeAreaView>
+    <Button
+        title="Login"
+        onPress={() => Alert.alert('You have successfully login')}
+       />
       <StatusBar style="auto" />
       
     </View>
